@@ -1,0 +1,18 @@
+<% include_stylesheet 'admin/application' %>
+
+<h1>Testimonials</h1>
+
+<div id="new-page">
+  <p><%= link_to "#{image_tag ("admin/icons-small/add.png")} Add New Testimonial", '/admin/testimonials/new' %></p>
+</div>
+
+<% for testimonial in @testimonials %>
+    <h2 class="content-title"><%=h testimonial.author %></h2>
+    
+	<div class="content-links">
+		<ul>
+			<li><%= link_to "#{image_tag ("admin/icons-small/edit.png", :border =>0, :title => 'Edit')}Edit", testimonial_edit_url(:id => testimonial.id) %></li>
+			<li><%= link_to "#{image_tag ("admin/icons-small/delete.png", :border =>0, :title => 'Delete')}Delete", testimonial_remove_url(:id => testimonial.id), :confirm => "Are you sure?" %></li>
+		<ul>
+	</div>
+<% end %>

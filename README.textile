@@ -1,0 +1,32 @@
+h1. Radiant CMS testimonial management tool extension
+
+A straight-forward management tool used to input testimonials in Radiant CMS
+
+h1. Features
+
+Allows you to ad testimonials in Radiant and randomly display on a page.
+
+
+h1. How to Install
+
+Place the testimonial extension in vendor/extensions/
+
+Run the migration of the Testimonial extension
+<pre><code>
+rake radiant:extensions:testimonial:migrate
+rake radiant:extensions:testimonial:update
+</pre></code>
+
+h1. Notes
+
+By default, the tool picks 4 testimonials at random.
+To insert testimonials on a page, use radius tags like so:
+
+<pre><code>
+<r:testimonials:each>
+  <r:author/>
+  <r:body/>
+</r:testimonials:each>
+</code></pre>
+
+See the tags file <code>testimonial_tags.rb</code> in the app/models directory to customize.
