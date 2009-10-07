@@ -16,7 +16,7 @@ Run the migration of the Testimonial extension
 <pre><code>
 rake radiant:extensions:testimonials:migrate
 rake radiant:extensions:testimonials:update
-</pre></code>
+</code></pre>
 
 h1. Notes
 
