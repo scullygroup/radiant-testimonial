@@ -1,7 +1,7 @@
 # Uncomment this if you reference any of your controllers in activate
 # require_dependency 'application'
 
-class TestimonialExtension < Radiant::Extension
+class TestimonialsExtension < Radiant::Extension
   version "1.0"
   description "A Radiant extension that allows you to add testimonials and generate them randomly on each page"
   url "http://www.scullytown.com"

@@ -1,0 +1,7 @@
+- content_for :testimonial do
+  %ul
+    - for testimonial in @testimonial
+      %li
+        = testimonial.body
+        %br
+        = testimonial.author

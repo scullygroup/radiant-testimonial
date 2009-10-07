@@ -1,15 +1,11 @@
 xml.instruct! :xml, :version=>"1.0"
 xml.container {
-
-  for testimonial in @testimonials
   
+  for testimonial in @testimonials
     xml.testimonial {
-
         xml.body(testimonial.body)
         xml.author(testimonial.author)
-       
-      }
-      
+      }    
   end
 
 }

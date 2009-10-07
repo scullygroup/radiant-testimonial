@@ -7,7 +7,8 @@ module TestimonialTags
           
   tag 'testimonials:each' do |tag|
     result = []
-    Testimonial.find_by_sql("select * from testimonials order by rand() limit 1").each do |testimonial|
+    @testimonials = Testimonial.find(:all, :order => "RAND()", :limit => 1)
+    @testimonials.each do |testimonial|
       tag.locals.testimonial = testimonial
       result << tag.expand
     end

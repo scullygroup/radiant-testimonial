@@ -1,13 +1,10 @@
-#class Admin::TestimonialsController < ApplicationController
-class Admin::TestimonialsController < Admin::AbstractModelController
- #model_class Testimonial
+class Admin::TestimonialsController < ApplicationController
   
   def index
     @testimonials = Testimonial.find(:all)
     
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @testimonials }
+      format.html
     end
   end
   
@@ -15,8 +12,7 @@ class Admin::TestimonialsController < Admin::AbstractModelController
     @testimonial = Testimonial.find(params[:id])
     
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @testimonial }
+      format.html
     end
   end
 
@@ -24,8 +20,7 @@ class Admin::TestimonialsController < Admin::AbstractModelController
     @testimonial = Testimonial.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @testimonial }
+      format.html
     end
   end
 
@@ -40,10 +35,8 @@ class Admin::TestimonialsController < Admin::AbstractModelController
       if @testimonial.save
         flash[:notice] = 'Testimonial was successfully created.'
         format.html { redirect_to('/admin/testimonials') }
-        format.xml  { render :xml => @testimonial, :status => :created, :location => @testimonial }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @testimonial.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -55,10 +48,8 @@ class Admin::TestimonialsController < Admin::AbstractModelController
       if @testimonial.update_attributes(params[:testimonial])
         flash[:notice] = 'Testimonial was successfully updated.'
         format.html { redirect_to('/admin/testimonials') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @testimonial.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -68,8 +59,8 @@ class Admin::TestimonialsController < Admin::AbstractModelController
     @testimonial.destroy
 
     respond_to do |format|
+      flash[:notice] = 'Testimonial was successfully deleted.'
       format.html { redirect_to('/admin/testimonials') }
-      format.xml  { head :ok }
     end
   end
   
