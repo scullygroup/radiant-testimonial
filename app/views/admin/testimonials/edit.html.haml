@@ -1,7 +1,7 @@
 - include_stylesheet 'admin/application'
 %h1
   Edit:
-  = @testimonial.title
+  =h @testimonial.title
 
 = render :partial => '/admin/testimonials/form', :locals => { :action => 'update' }
 
