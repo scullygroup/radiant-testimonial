@@ -30,3 +30,5 @@ To insert testimonials on a page, use radius tags like so:
 </code></pre>
 
 See the tags file <code>testimonial_tags.rb</code> in the app/models directory to customize.
+
+Copyright (c) 2009 Scully Group, released under the MIT License
