@@ -27,7 +27,9 @@ class TestimonialsExtension < Radiant::Extension
   end
   
   def activate
-    admin.tabs.add "Testimonials", "/admin/testimonials", :after => "Layouts", :visibility => [:all]
+    tab 'Testimonials' do
+      add_item "Testimonials", "/admin/testimonials"
+    end
     Page.send :include, TestimonialTags
     NoCachePage
   end
